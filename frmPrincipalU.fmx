@@ -1,0 +1,119 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object cabecalho: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbTitulo: TLabel
+      Align = Contents
+      StyledSettings = [FontColor]
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00050000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Ajuda CNC'
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbutton'
+      TabOrder = 1
+    end
+  end
+  object lImagemCorpo: TLayout
+    Align = Top
+    Position.Y = 48.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 137.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+  object lPropaganda: TLayout
+    Align = Bottom
+    Position.Y = 488.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 79.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object BannerAd1: TBannerAd
+      Align = Client
+    end
+  end
+  object lCorpo: TLayout
+    Align = Client
+    Size.Width = 384.000000000000000000
+    Size.Height = 303.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object btnCalculos: TButton
+      Align = Top
+      StyledSettings = [FontColor]
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 54.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'Calculos'
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      OnClick = btnCalculosClick
+    end
+    object btnApostilas: TButton
+      Align = Top
+      StyledSettings = [FontColor]
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 69.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 54.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Apostilas'
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+    object btnAprendizados: TButton
+      Align = Top
+      StyledSettings = [FontColor]
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 133.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 54.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Aprendizado'
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

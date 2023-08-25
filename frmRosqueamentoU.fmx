@@ -1,0 +1,245 @@
+object frmRosqueamento: TfrmRosqueamento
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object cabecalho: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbTitulo: TLabel
+      Align = Contents
+      StyledSettings = [FontColor]
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Roboto'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00050000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Rosqueamento'
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = Left
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowlefttoolbutton'
+      TabOrder = 1
+      OnClick = btnVoltarClick
+    end
+  end
+  object lbSubTitulo: TLabel
+    Align = Top
+    StyledSettings = [Style, FontColor]
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 53.000000000000000000
+    Size.Width = 374.000000000000000000
+    Size.Height = 56.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Roboto'
+    TextSettings.HorzAlign = Center
+    Text = 
+      'Aba Calculos CNC - Nesta aba se encontra todas as formulas de ca' +
+      'lculos disponiveis'
+    TabOrder = 1
+  end
+  object lCorpo: TLayout
+    Align = Client
+    Size.Width = 384.000000000000000000
+    Size.Height = 453.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object lCabecalhoCorpo: TLayout
+      Align = Top
+      Size.Width = 384.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object rbMetrica: TRadioButton
+        Align = MostLeft
+        GroupName = 'TipoRosca'
+        IsChecked = True
+        Margins.Left = 25.000000000000000000
+        Position.X = 25.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'M'#233'trica'
+      end
+      object rbPolegadas: TRadioButton
+        Align = MostRight
+        GroupName = 'TipoRosca'
+        Margins.Right = 25.000000000000000000
+        Position.X = 248.000000000000000000
+        Size.Width = 111.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Polegadas'
+      end
+    end
+    object lDadosIniciais: TLayout
+      Align = Top
+      Position.Y = 33.000000000000000000
+      Size.Width = 384.000000000000000000
+      Size.Height = 184.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Label4: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Top = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.HorzAlign = Center
+        Text = 'Medida da Rosca'
+        TabOrder = 3
+      end
+      object edtValor: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 8
+        MaxLength = 10
+        Text = 'M25X2'
+        TextSettings.HorzAlign = Center
+        Position.X = 25.000000000000000000
+        Position.Y = 28.000000000000000000
+        Margins.Left = 25.000000000000000000
+        Margins.Right = 25.000000000000000000
+        Size.Width = 334.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        CharCase = ecUpperCase
+      end
+      object Label1: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Top = 5.000000000000000000
+        Position.Y = 65.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.HorzAlign = Center
+        Text = 'Quantidade de Passadas'
+        TabOrder = 2
+      end
+      object edtQtdPassadas: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 7
+        MaxLength = 2
+        Text = '1'
+        TextSettings.HorzAlign = Center
+        Position.X = 25.000000000000000000
+        Position.Y = 88.000000000000000000
+        Margins.Left = 25.000000000000000000
+        Margins.Right = 25.000000000000000000
+        Size.Width = 334.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        CharCase = ecUpperCase
+      end
+      object btnCalcular: TButton
+        Align = Top
+        Margins.Left = 25.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 25.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 25.000000000000000000
+        Position.Y = 130.000000000000000000
+        Size.Width = 334.000000000000000000
+        Size.Height = 31.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Calcular'
+        OnClick = btnCalcularClick
+      end
+    end
+    object lSaidaDeDados: TLayout
+      Align = Top
+      Position.Y = 217.000000000000000000
+      Size.Width = 384.000000000000000000
+      Size.Height = 144.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lbPasse: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.HorzAlign = Center
+        Text = 'Passo (F):'
+        TabOrder = 6
+      end
+      object lbAlturaDoFilete: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Position.Y = 23.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.HorzAlign = Center
+        Text = 'Altura do Filete (P):'
+        TabOrder = 5
+      end
+      object lbDiametroFinal: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Position.Y = 46.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.HorzAlign = Center
+        Text = 'Di'#226'metro Final (X):'
+        TabOrder = 4
+      end
+      object lbProfundidadePasse: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Position.Y = 69.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.HorzAlign = Center
+        Text = 'Profundidade do Passe (Q):'
+        TabOrder = 3
+      end
+      object lbResultado: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Top = 10.000000000000000000
+        Position.Y = 102.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'G76 X0 Z0 P0 Q0 F0'
+        TabOrder = 2
+      end
+    end
+  end
+end
