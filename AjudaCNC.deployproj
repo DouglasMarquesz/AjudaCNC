@@ -48,15 +48,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Release\libAjudaCNC.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AjudaCNC\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libAjudaCNC.so</RemoteName>
-            <DeployClass>ProjectOutput_Android32</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="Android64\Release\colors.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>AjudaCNC\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>

@@ -12,7 +12,7 @@
     <Transaction>2023/08/25 02:41:22.000.960,=C:\Users\dougl\Desktop\AjudaCNC\frmRosqueamentoU.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android64="" Android="ZF523L76CQ"/>
+		<NoProfile Android64="ZF523L76CQ" Android="ZF523L76CQ"/>
 	</ActiveMobileDevice>
-	<BT_BuildType>AppStore</BT_BuildType>
+	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

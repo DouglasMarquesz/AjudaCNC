@@ -29,8 +29,12 @@ type
     lbDiametroFinal: TLabel;
     lbProfundidadePasse: TLabel;
     lbResultado: TLabel;
+    btnAtualizar: TButton;
     procedure btnVoltarClick(Sender: TObject);
     procedure btnCalcularClick(Sender: TObject);
+    procedure rbMetricaClick(Sender: TObject);
+    procedure rbPolegadasClick(Sender: TObject);
+    procedure btnAtualizarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,7 +49,17 @@ implementation
 {$R *.fmx}
 
 
-//Calcular rosqueamento
+procedure TfrmRosqueamento.btnAtualizarClick(Sender: TObject);
+begin
+  edtValor.Text := '';
+  edtQtdPassadas.Text	 := '';
+  lbPasse.Text := 'Passo (F):';
+  lbDiametroFinal.Text  := 'Diâmetro Final (X): ';
+  lbProfundidadePasse.Text  := 'Profundidade do Passe (Q): ';
+  lbAlturaDoFilete.Text  := 'Altura do Filete (P): ';
+  lbResultado.Text  := 'G76 X0 Z0 P0 Q0 F0';
+end;
+
 procedure TfrmRosqueamento.btnCalcularClick(Sender: TObject);
 var
 passe : double;
@@ -55,10 +69,58 @@ profupasse : double;
 qtdpassadas: double;
 valorRosca : string;
 passeInicial: double;
+
+polegadas: string;
+fiosRosca: double;
 begin
 
 //Tratamento de erros
 edtValor.Text := StringReplace(edtValor.Text, '.', ',', [rfReplaceAll, rfIgnoreCase]);
+
+if (edtvalor.text = '') or (edtqtdpassadas.Text = '') then
+begin
+  showmessage('Preencha todos os campos antes de realizar esta ação');
+  exit;
+end;
+
+
+//Rosca do tipo polegada:
+if rbPolegadas.Ischecked = true then
+begin
+if (Pos('"',edtValor.Text) = 0) OR (Pos('-',edtValor.Text) = 0) then
+  begin
+    showmessage('Por favor, insira o valor no formato polegada, exemplo: "1/2"-12"');
+    exit;
+  end;
+
+valorRosca := edtValor.Text;
+
+//Polegadas
+polegadas := (Copy(valorRosca,0,Pos('"',valorRosca) - 1));
+if (Pos('/',edtValor.Text) <> 0) then
+begin
+  polegadas := FloatToStr(StrToFloat((Copy(polegadas,0,Pos('/',polegadas)-1))) / StrToFloat((Copy(polegadas,Pos('/',polegadas)+1, Length(polegadas)))));
+end;
+
+//Converter polegadas para milimetros
+polegadas := FloatToStr(strToFloat(polegadas) * 25.4);
+
+//Fios da rosca
+fiosRosca := StrToFloat(Copy(valorRosca,Pos('-',valorRosca) + 1));
+
+
+//showmessage(floattoStr(fiosrosca));
+//showmessage(polegadas);
+
+
+end;
+
+
+
+
+
+
+
 
 //Rosca do tipo Métrica:
 if rbMetrica.IsChecked = true	then
@@ -90,6 +152,7 @@ begin
   lbAlturaDoFilete.Text  := 'Altura do Filete (P) '+FloatToStr(passe);
   lbResultado.Text  := 'G76 X'+FloatToStr(diametrofinal)+' Z0 P'+FloatToStr(passe*1000)+' Q'+FloatToStr(profupasse*1000)+' F'+FloatToStr(passeInicial);
   lbresultado.Text  := StringReplace(lbResultado.Text	, ',', '.', [rfReplaceAll, rfIgnoreCase]);
+
   if diametrofinal <= 0 then
   begin
     showmessage('Impossivel de fazer esta rosca!');
@@ -97,12 +160,23 @@ begin
 End;
 
 
-
 end;
 
 procedure TfrmRosqueamento.btnVoltarClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmRosqueamento.rbMetricaClick(Sender: TObject);
+begin
+  edtValor.Text := 'M25X2';
+  edtQtdPassadas.Text	 := '';
+end;
+
+procedure TfrmRosqueamento.rbPolegadasClick(Sender: TObject);
+begin
+  edtValor.Text := '1/2"-12';
+  edtQtdPassadas.Text	 := '';
 end;
 
 end.

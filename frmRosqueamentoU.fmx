@@ -35,6 +35,17 @@ object frmRosqueamento: TfrmRosqueamento
       TabOrder = 1
       OnClick = btnVoltarClick
     end
+    object btnAtualizar: TButton
+      Align = Right
+      Position.X = 304.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'refreshtoolbutton'
+      TabOrder = 3
+      Text = 'btnAtualizar'
+      OnClick = btnAtualizarClick
+    end
   end
   object lbSubTitulo: TLabel
     Align = Top
@@ -78,6 +89,7 @@ object frmRosqueamento: TfrmRosqueamento
         Size.PlatformDefault = False
         TabOrder = 0
         Text = 'M'#233'trica'
+        OnClick = rbMetricaClick
       end
       object rbPolegadas: TRadioButton
         Align = MostRight
@@ -89,6 +101,7 @@ object frmRosqueamento: TfrmRosqueamento
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Polegadas'
+        OnClick = rbPolegadasClick
       end
     end
     object lDadosIniciais: TLayout
