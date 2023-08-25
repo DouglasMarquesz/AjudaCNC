@@ -2,12 +2,12 @@ object frmRosqueamento: TfrmRosqueamento
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 567
+  ClientHeight = 592
   ClientWidth = 384
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object cabecalho: TToolBar
     Size.Width = 384.000000000000000000
     Size.Height = 48.000000000000000000
@@ -37,8 +37,8 @@ object frmRosqueamento: TfrmRosqueamento
     end
     object btnAtualizar: TButton
       Align = Right
-      Position.X = 304.000000000000000000
-      Size.Width = 80.000000000000000000
+      Position.X = 336.000000000000000000
+      Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'refreshtoolbutton'
@@ -69,7 +69,7 @@ object frmRosqueamento: TfrmRosqueamento
   object lCorpo: TLayout
     Align = Client
     Size.Width = 384.000000000000000000
-    Size.Height = 453.000000000000000000
+    Size.Height = 478.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 5
     object lCabecalhoCorpo: TLayout
@@ -84,7 +84,7 @@ object frmRosqueamento: TfrmRosqueamento
         IsChecked = True
         Margins.Left = 25.000000000000000000
         Position.X = 25.000000000000000000
-        Size.Width = 96.000000000000000000
+        Size.Width = 97.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -95,13 +95,21 @@ object frmRosqueamento: TfrmRosqueamento
         Align = MostRight
         GroupName = 'TipoRosca'
         Margins.Right = 25.000000000000000000
-        Position.X = 248.000000000000000000
-        Size.Width = 111.000000000000000000
+        Position.X = 256.000000000000000000
+        Size.Width = 103.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Polegadas'
         OnClick = rbPolegadasClick
+      end
+      object cbRoscaInterna: TCheckBox
+        Align = Center
+        Size.Width = 127.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Rosca Interna'
       end
     end
     object lDadosIniciais: TLayout
@@ -189,7 +197,7 @@ object frmRosqueamento: TfrmRosqueamento
       Align = Top
       Position.Y = 217.000000000000000000
       Size.Width = 384.000000000000000000
-      Size.Height = 144.000000000000000000
+      Size.Height = 240.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       object lbPasse: TLabel
@@ -201,7 +209,7 @@ object frmRosqueamento: TfrmRosqueamento
         TextSettings.Font.Family = 'Roboto'
         TextSettings.HorzAlign = Center
         Text = 'Passo (F):'
-        TabOrder = 6
+        TabOrder = 7
       end
       object lbAlturaDoFilete: TLabel
         Align = Top
@@ -213,7 +221,7 @@ object frmRosqueamento: TfrmRosqueamento
         TextSettings.Font.Family = 'Roboto'
         TextSettings.HorzAlign = Center
         Text = 'Altura do Filete (P):'
-        TabOrder = 5
+        TabOrder = 6
       end
       object lbDiametroFinal: TLabel
         Align = Top
@@ -225,7 +233,7 @@ object frmRosqueamento: TfrmRosqueamento
         TextSettings.Font.Family = 'Roboto'
         TextSettings.HorzAlign = Center
         Text = 'Di'#226'metro Final (X):'
-        TabOrder = 4
+        TabOrder = 5
       end
       object lbProfundidadePasse: TLabel
         Align = Top
@@ -237,13 +245,13 @@ object frmRosqueamento: TfrmRosqueamento
         TextSettings.Font.Family = 'Roboto'
         TextSettings.HorzAlign = Center
         Text = 'Profundidade do Passe (Q):'
-        TabOrder = 3
+        TabOrder = 4
       end
       object lbResultado: TLabel
         Align = Top
         StyledSettings = [Family, Style, FontColor]
-        Margins.Top = 10.000000000000000000
-        Position.Y = 102.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Position.Y = 132.000000000000000000
         Size.Width = 384.000000000000000000
         Size.Height = 23.000000000000000000
         Size.PlatformDefault = False
@@ -251,6 +259,20 @@ object frmRosqueamento: TfrmRosqueamento
         TextSettings.Font.Size = 14.000000000000000000
         TextSettings.HorzAlign = Center
         Text = 'G76 X0 Z0 P0 Q0 F0'
+        TabOrder = 3
+      end
+      object Label2: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Top = 15.000000000000000000
+        Position.Y = 107.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'G76 P020055'
         TabOrder = 2
       end
     end

@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Layouts, FMX.Edit;
+  FMX.Controls.Presentation, FMX.Layouts, FMX.Edit, FMX.Objects;
 
 type
   TfrmRosqueamento = class(TForm)
@@ -30,6 +30,8 @@ type
     lbProfundidadePasse: TLabel;
     lbResultado: TLabel;
     btnAtualizar: TButton;
+    cbRoscaInterna: TCheckBox;
+    Label2: TLabel;
     procedure btnVoltarClick(Sender: TObject);
     procedure btnCalcularClick(Sender: TObject);
     procedure rbMetricaClick(Sender: TObject);
@@ -72,6 +74,7 @@ passeInicial: double;
 
 polegadas: string;
 fiosRosca: double;
+alturaFilete: double;
 begin
 
 //Tratamento de erros
@@ -102,17 +105,36 @@ begin
   polegadas := FloatToStr(StrToFloat((Copy(polegadas,0,Pos('/',polegadas)-1))) / StrToFloat((Copy(polegadas,Pos('/',polegadas)+1, Length(polegadas)))));
 end;
 
-//Converter polegadas para milimetros
-polegadas := FloatToStr(strToFloat(polegadas) * 25.4);
+  //Converter polegadas para milimetros
+  polegadas := FloatToStr(strToFloat(polegadas) * 25.4);
 
-//Fios da rosca
-fiosRosca := StrToFloat(Copy(valorRosca,Pos('-',valorRosca) + 1));
+  //Fios da rosca
+  fiosRosca := StrToFloat(Copy(valorRosca,Pos('-',valorRosca) + 1));
+  passe := strToFloat(FormatFloat('0.###',(25.4 / fiosRosca)));
+  alturaFilete := (0.866 * passe);
+  if cbRoscaInterna.isChecked = true then
+  begin
+     diametrofinal := StrToFloat(polegadas) + (passe * 2);
+  end
+    else
+  begin
+      diametrofinal := StrToFloat(polegadas) - (passe * 2);
+  end;
 
 
-//showmessage(floattoStr(fiosrosca));
-//showmessage(polegadas);
+  profupasse := alturaFilete/(sqrt(StrToFloat(edtqtdpassadas.Text)));
 
+  lbPasse.Text := 'Passo (F): '+FormatFloat('0.###',(25.4 / fiosRosca));
+  lbDiametroFinal.Text  := 'Diâmetro Final (X): '+FormatFloat('0.###',(diametrofinal));
+  lbProfundidadePasse.Text  := 'Profundidade do Passe (Q) '+FormatFloat('0.###',(profupasse));
+  lbAlturaDoFilete.Text  := 'Altura do Filete (P) '+FormatFloat('0.###',(alturaFilete));
+  lbResultado.Text  := 'G76 X'+FormatFloat('0.##',(diametrofinal))+' Z0 P'+FormatFloat('0.##',(passe*1000))+' Q'+FormatFloat('0',(profupasse*1000))+' F'+FormatFloat('0.##',(passe));
+  lbresultado.Text  := StringReplace(lbResultado.Text	, ',', '.', [rfReplaceAll, rfIgnoreCase]);
 
+  if diametrofinal <= 0 then
+  begin
+    showmessage('Impossivel de fazer esta rosca, diâmetro abaixo ou igual a 0!');
+  end;
 end;
 
 
@@ -140,7 +162,15 @@ begin
   //Calcular passe
   passe := (0.65 * passeInicial);
   //Calcular diametro final
-  diametrofinal := diametroinicial - (passe *2);
+  if cbRoscaInterna.isChecked = true then
+  begin
+    diametrofinal := diametroinicial + (passe *2);
+  end
+    else
+  begin
+    diametrofinal := diametroinicial - (passe *2);
+  end;
+
   //Calcular profundidade do passe
   profupasse := (passe/(sqrt(qtdpassadas)));
   profuPasse := StrToFloat(FormatFloat('0.###',profupasse));
@@ -155,12 +185,17 @@ begin
 
   if diametrofinal <= 0 then
   begin
-    showmessage('Impossivel de fazer esta rosca!');
+    showmessage('Impossivel de fazer esta rosca, diâmetro abaixo ou igual a 0!');
   end;
 End;
 
 
 end;
+
+
+
+
+
 
 procedure TfrmRosqueamento.btnVoltarClick(Sender: TObject);
 begin

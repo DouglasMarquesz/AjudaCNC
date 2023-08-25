@@ -4,15 +4,15 @@
     <Transaction>2023/08/24 01:51:00.000.231,=C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2023/08/24 01:53:42.000.405,=C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2023/08/25 02:33:05.000.952,=C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/08/25 02:33:23.000.371,C:\Users\dougl\Desktop\AjudaCNC\frmPrincipalU.fmx=C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2023/08/25 02:33:23.000.371,C:\Users\dougl\Desktop\AjudaCNC\frmPrincipalU.pas=C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2023/08/25 02:33:28.000.484,C:\Users\dougl\Desktop\AjudaCNC\AjudaCNC.dproj=C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/08/25 02:33:23.000.371,C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\dougl\Desktop\AjudaCNC\frmPrincipalU.fmx</Transaction>
+    <Transaction>2023/08/25 02:33:23.000.371,C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\dougl\Desktop\AjudaCNC\frmPrincipalU.pas</Transaction>
+    <Transaction>2023/08/25 02:33:28.000.484,C:\Users\dougl\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\dougl\Desktop\AjudaCNC\AjudaCNC.dproj</Transaction>
     <Transaction>2023/08/25 02:40:50.000.187,=C:\Users\dougl\Desktop\AjudaCNC\frmCalculosAvancoRotacaoU.pas</Transaction>
     <Transaction>2023/08/25 02:40:58.000.759,=C:\Users\dougl\Desktop\AjudaCNC\frmCalculosU.pas</Transaction>
     <Transaction>2023/08/25 02:41:22.000.960,=C:\Users\dougl\Desktop\AjudaCNC\frmRosqueamentoU.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android64="ZF523L76CQ" Android="ZF523L76CQ"/>
+		<NoProfile Android64="ZF523L76CQ" Android=""/>
 	</ActiveMobileDevice>
 	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>
